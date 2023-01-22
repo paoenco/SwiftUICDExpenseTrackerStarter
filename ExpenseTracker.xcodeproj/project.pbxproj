@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52899746297E0361007A4B56 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52899745297E0361007A4B56 /* CoreDataStack.swift */; };
 		52CA6A07297E012400059753 /* ExpenseTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 52CA6A05297E012400059753 /* ExpenseTracker.xcdatamodeld */; };
 		8BE1F53F244C04E90017E21D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE1F53E244C04E90017E21D /* AppDelegate.swift */; };
 		8BE1F541244C04E90017E21D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE1F540244C04E90017E21D /* SceneDelegate.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		52899745297E0361007A4B56 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		52CA6A06297E012400059753 /* ExpenseTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ExpenseTracker.xcdatamodel; sourceTree = "<group>"; };
 		8BE1F53B244C04E90017E21D /* ExpenseTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExpenseTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BE1F53E244C04E90017E21D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				8BE1F54C244C04EA0017E21D /* Info.plist */,
 				8BE1F546244C04EA0017E21D /* Preview Content */,
 				52CA6A05297E012400059753 /* ExpenseTracker.xcdatamodeld */,
+				52899745297E0361007A4B56 /* CoreDataStack.swift */,
 			);
 			path = ExpenseTracker;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				8BE1F577244C0AB20017E21D /* Helpers.swift in Sources */,
 				8BE1F57F244C0D720017E21D /* SelectSortOrderView.swift in Sources */,
 				8BE1F567244C08CB0017E21D /* DashboardTabView.swift in Sources */,
+				52899746297E0361007A4B56 /* CoreDataStack.swift in Sources */,
 				8BE1F57B244C0C640017E21D /* SearchBar.swift in Sources */,
 				8BE1F570244C0A1E0017E21D /* CategoryRowView.swift in Sources */,
 				8BE1F55A244C060B0017E21D /* Category.swift in Sources */,
