@@ -10,6 +10,9 @@ import SwiftUI
 import CoreData
 
 struct LogFormView: View {
+    
+    var logToEdit: ExpenseLog?
+    var context: NSManagedObjectContext
         
     @State var name: String = ""
     @State var amount: Double = 0
@@ -18,9 +21,6 @@ struct LogFormView: View {
     
     @Environment(\.presentationMode)
     var presentationMode
-    
-    var logToEdit: ExpenseLog?
-    var context: NSManagedObjectContext
     
     var title: String {
         logToEdit == nil ? "Create Expense Log" : "Edit Expense Log"

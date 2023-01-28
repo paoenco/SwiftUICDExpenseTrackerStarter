@@ -18,6 +18,8 @@ struct LogListView: View {
                   sortDescriptors: [NSSortDescriptor(keyPath: \ExpenseLog.date, ascending: false)])
     private var result: FetchedResults<ExpenseLog>
     
+    @State var logToEdit: ExpenseLog?
+    
     init(predicate: NSPredicate?, sortDescriptor: NSSortDescriptor) {
         let fetchRequest = NSFetchRequest<ExpenseLog>(entityName: ExpenseLog.entity().name ?? "ExpenseLog")
         fetchRequest.sortDescriptors = [sortDescriptor]
@@ -33,7 +35,7 @@ struct LogListView: View {
         List {
             ForEach(result) { log in
                 Button {
-                    // TODO: Implement Edit
+                    logToEdit = log
                 } label: {
                     HStack(spacing: 16) {
                         CategoryImageView(category: log.categoryEnum)
@@ -51,6 +53,16 @@ struct LogListView: View {
                 }
             }
             .onDelete(perform: onDelete)
+            .sheet(item: $logToEdit, onDismiss: {
+                logToEdit = nil
+            }) { log in
+                LogFormView(logToEdit: logToEdit,
+                            context: context,
+                            name: log.name ?? "",
+                            amount: log.amount?.doubleValue ?? 0,
+                            category: Category(rawValue: log.category ?? "") ?? .food,
+                            date: log.date ?? Date())
+            }
         }
     }
     
