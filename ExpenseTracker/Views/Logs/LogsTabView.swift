@@ -35,7 +35,7 @@ struct LogsTabView: View {
             }
             .padding(.bottom, searchBarHeight)
             .sheet(isPresented: $isAddFormPresented) {
-                LogFormView()
+                LogFormView(context: context)
             }
             .navigationBarItems(trailing: Button(action: addTapped) { Text("Add") })
             .navigationBarTitle("Expense Logs", displayMode: .inline)
