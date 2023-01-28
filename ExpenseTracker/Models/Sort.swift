@@ -38,9 +38,9 @@ struct ExpenseLogSort {
     var sortDescriptor: NSSortDescriptor {
         switch sortType {
         case .date:
-            fatalError()
+            return NSSortDescriptor(keyPath: \ExpenseLog.date, ascending: isAscending)
         case .amount:
-            fatalError()
+            return NSSortDescriptor(keyPath: \ExpenseLog.amount, ascending: isAscending)
         }
     }
 }
