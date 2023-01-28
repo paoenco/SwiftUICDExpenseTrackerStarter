@@ -19,8 +19,11 @@ struct LogFormView: View {
     @Environment(\.presentationMode)
     var presentationMode
     
+    var logToEdit: ExpenseLog?
+    var context: NSManagedObjectContext
+    
     var title: String {
-        "Create Expense Log"
+        logToEdit == nil ? "Create Expense Log" : "Edit Expense Log"
     }
     
     var body: some View {
@@ -57,13 +60,32 @@ struct LogFormView: View {
     private func onSaveTapped() {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
         
+        let log: ExpenseLog
+        if let logToEdit = logToEdit {
+            log = logToEdit
+        } else {
+            log = ExpenseLog(context: context)
+            log.id = UUID()
+        }
+        
+        log.name = name
+        log.category = category.rawValue
+        log.amount = NSDecimalNumber(value: amount)
+        log.date = date
+        
+        do {
+            try context.save()
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+        
         self.presentationMode.wrappedValue.dismiss()
     }
     
 }
 
-struct LogFormView_Previews: PreviewProvider {
-    static var previews: some View {
-        return LogFormView()
-    }
-}
+//struct LogFormView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        return LogFormView()
+//    }
+//}
