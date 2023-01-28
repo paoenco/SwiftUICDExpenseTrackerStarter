@@ -19,4 +19,23 @@ extension ExpenseLog {
     var dateText: String { Utils.dateFormatter.localizedString(for: date ?? Date(), relativeTo: Date()) }
     
     var amountText: String { Utils.numberFormatter.string(from: NSNumber(value: amount?.doubleValue ?? 0)) ?? "" }
+    
+    static func predicate(with categories: [Category], searchText: String) -> NSPredicate? {
+        var predicates = [NSPredicate]()
+        
+        if categories.isEmpty == false {
+            let categoriesString = categories.map { $0.rawValue }
+            predicates.append(NSPredicate(format: "category IN %@", categoriesString))
+        }
+        
+        if searchText.isEmpty == false {
+            predicates.append(NSPredicate(format: "name CONTAINS[cd] %@ ", searchText.lowercased()))
+        }
+        
+        if predicates.isEmpty {
+            return nil
+        } else {
+            return NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
+        }
+    }
 }
