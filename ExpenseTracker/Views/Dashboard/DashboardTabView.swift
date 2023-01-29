@@ -64,7 +64,11 @@ struct DashboardTabView: View {
     
     func fetchTotalSums() {
         ExpenseLog.fetchAllCategoriesTotalAmountSum(context: self.context) { (results) in
-            guard !results.isEmpty else { return }
+            guard !results.isEmpty else {
+                totalExpenses = nil
+                categoriesSum = nil
+                return
+            }
             
             let totalSum = results.map { $0.sum }.reduce(0, +)
             self.totalExpenses = totalSum
