@@ -67,7 +67,12 @@ struct LogListView: View {
     }
     
     private func onDelete(with indexSet: IndexSet) {
-        // TODO: Implement Delete
+        indexSet.forEach { index in
+            let log = result[index]
+            context.delete(log)
+        }
+        
+        try? context.saveContext()
     }
 }
 
