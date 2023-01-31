@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52470B8E29888C2C00661C96 /* MonthlyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52470B8D29888C2C00661C96 /* MonthlyView.swift */; };
 		527842472982F828008B9E84 /* ExpenseLog+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527842462982F828008B9E84 /* ExpenseLog+Extensions.swift */; };
 		52899746297E0361007A4B56 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52899745297E0361007A4B56 /* CoreDataStack.swift */; };
 		52CA6A07297E012400059753 /* ExpenseTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 52CA6A05297E012400059753 /* ExpenseTracker.xcdatamodeld */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		52470B8D29888C2C00661C96 /* MonthlyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyView.swift; sourceTree = "<group>"; };
 		527842462982F828008B9E84 /* ExpenseLog+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExpenseLog+Extensions.swift"; sourceTree = "<group>"; };
 		52899745297E0361007A4B56 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		52CA6A06297E012400059753 /* ExpenseTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ExpenseTracker.xcdatamodel; sourceTree = "<group>"; };
@@ -77,6 +79,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		52470B8929887A6C00661C96 /* MonthlyView */ = {
+			isa = PBXGroup;
+			children = (
+				52470B8D29888C2C00661C96 /* MonthlyView.swift */,
+			);
+			path = MonthlyView;
+			sourceTree = "<group>";
+		};
 		8BE1F532244C04E90017E21D = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +109,7 @@
 				8BE1F53E244C04E90017E21D /* AppDelegate.swift */,
 				8BE1F540244C04E90017E21D /* SceneDelegate.swift */,
 				8BE1F560244C07EC0017E21D /* Views */,
+				52470B8929887A6C00661C96 /* MonthlyView */,
 				8BE1F55B244C071C0017E21D /* Helpers */,
 				8BE1F555244C057C0017E21D /* Models */,
 				8BE1F544244C04EA0017E21D /* Assets.xcassets */,
@@ -280,6 +291,7 @@
 				8BE1F577244C0AB20017E21D /* Helpers.swift in Sources */,
 				8BE1F57F244C0D720017E21D /* SelectSortOrderView.swift in Sources */,
 				8BE1F567244C08CB0017E21D /* DashboardTabView.swift in Sources */,
+				52470B8E29888C2C00661C96 /* MonthlyView.swift in Sources */,
 				52899746297E0361007A4B56 /* CoreDataStack.swift in Sources */,
 				8BE1F57B244C0C640017E21D /* SearchBar.swift in Sources */,
 				8BE1F570244C0A1E0017E21D /* CategoryRowView.swift in Sources */,

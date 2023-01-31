@@ -20,6 +20,15 @@ struct ContentView: View {
             }
             .tag(0)
             
+            MonthlyView()
+                .tabItem {
+                    VStack {
+                        Text("Budget")
+                        Image(systemName: "rectangle.stack.badge.person.crop")
+                    }
+                }
+                .tag(1)
+            
             LogsTabView()
                 .tabItem {
                     VStack {
@@ -27,13 +36,7 @@ struct ContentView: View {
                         Image(systemName: "tray")
                     }
             }
-            .tag(1)
+            .tag(2)
         }
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
     }
 }

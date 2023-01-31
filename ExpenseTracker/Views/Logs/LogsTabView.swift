@@ -49,9 +49,3 @@ struct LogsTabView: View {
     
     
 }
-
-struct LogsTabView_Previews: PreviewProvider {
-    static var previews: some View {
-        LogsTabView()
-    }
-}
