@@ -32,7 +32,7 @@ struct ContentView: View {
             LogsTabView()
                 .tabItem {
                     VStack {
-                        Text("Logs")
+                        Text("Expenses")
                         Image(systemName: "tray")
                     }
             }

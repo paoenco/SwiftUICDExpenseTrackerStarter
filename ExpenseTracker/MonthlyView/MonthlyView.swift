@@ -25,9 +25,24 @@ struct MonthlyView: View {
             List {
                 ForEach(result) { budget in
                     Button {
-                        budgetToEdit = budget
+                        print("push budget")
                     } label: {
                         Text(budget.name ?? "budget name not found")
+                            .font(.headline)
+                    }
+                    .swipeActions {
+                        Button(role: .destructive) {
+                            context.delete(budget)
+                            try? context.saveContext()
+                        } label: {
+                            Label("Delete", systemImage: "trash")
+                        }
+                        
+                        Button {
+                            budgetToEdit = budget
+                        } label: {
+                            Label("Edit", systemImage: "square.and.pencil")
+                        }
                     }
                 }
                 .onDelete(perform: onDelete)
