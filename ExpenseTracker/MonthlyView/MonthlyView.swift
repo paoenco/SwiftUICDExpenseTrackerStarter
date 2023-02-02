@@ -27,7 +27,7 @@ struct MonthlyView: View {
                 }
             }
             .sheet(isPresented: $isAddFormPresented) {
-                LogFormView(context: context)
+                MonthlyFormView()
             }
             .navigationTitle("Budgets")
             .toolbar {
