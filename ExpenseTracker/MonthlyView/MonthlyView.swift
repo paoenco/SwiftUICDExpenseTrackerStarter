@@ -17,18 +17,32 @@ struct MonthlyView: View {
                   sortDescriptors: [NSSortDescriptor(keyPath: \MonthlyBudget.date, ascending: false)])
     private var result: FetchedResults<MonthlyBudget>
     
-    @State var isAddFormPresented: Bool = false
+    @State private var isAddFormPresented: Bool = false
+    @State private var budgetToEdit: MonthlyBudget?
     
     var body: some View {
         NavigationView {
             List {
                 ForEach(result) { budget in
-                    Text(budget.name ?? "no budget name")
+                    Button {
+                        budgetToEdit = budget
+                    } label: {
+                        Text(budget.name ?? "budget name not found")
+                    }
+                }
+                .onDelete(perform: onDelete)
+                .sheet(item: $budgetToEdit, onDismiss: {
+                    budgetToEdit = nil
+                }) { budget in
+                    MonthlyFormView(budgetToEdit: budgetToEdit,
+                                    context: context,
+                                    name: budget.name ?? "",
+                                    date: budget.date ?? Date())
                 }
             }
-            .sheet(isPresented: $isAddFormPresented) {
-                MonthlyFormView()
-            }
+            .sheet(isPresented: $isAddFormPresented, content: {
+                MonthlyFormView(context: context)
+            })
             .navigationTitle("Budgets")
             .toolbar {
                 Button {
@@ -36,9 +50,17 @@ struct MonthlyView: View {
                 } label: {
                     Image(systemName: "plus")
                 }
-
+                
             }
         }
     }
 
+    private func onDelete(with indexSet: IndexSet) {
+        indexSet.forEach { index in
+            let budget = result[index]
+            context.delete(budget)
+        }
+        
+        try? context.saveContext()
+    }
 }
