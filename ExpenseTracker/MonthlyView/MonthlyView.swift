@@ -24,8 +24,8 @@ struct MonthlyView: View {
         NavigationView {
             List {
                 ForEach(result) { budget in
-                    Button {
-                        print("push budget")
+                    NavigationLink {
+                        LogsTabView()
                     } label: {
                         Text(budget.name ?? "budget name not found")
                             .font(.headline)
