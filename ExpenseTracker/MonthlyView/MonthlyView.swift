@@ -49,7 +49,7 @@ struct MonthlyView: View {
                 .sheet(item: $budgetToEdit, onDismiss: {
                     budgetToEdit = nil
                 }) { budget in
-                    MonthlyFormView(budgetToEdit: budgetToEdit,
+                    MonthlyFormView(budgetToEdit: budget,
                                     context: context,
                                     name: budget.name ?? "",
                                     date: budget.date ?? Date())
