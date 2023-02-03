@@ -12,6 +12,6 @@
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
-        <relationship name="expenses" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="ExpenseLog" inverseName="monthlyBudget" inverseEntity="ExpenseLog"/>
+        <relationship name="expenses" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="ExpenseLog" inverseName="monthlyBudget" inverseEntity="ExpenseLog"/>
     </entity>
 </model>
