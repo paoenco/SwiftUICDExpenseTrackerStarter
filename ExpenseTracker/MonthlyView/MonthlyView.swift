@@ -45,7 +45,6 @@ struct MonthlyView: View {
                         }
                     }
                 }
-                .onDelete(perform: onDelete)
                 .sheet(item: $budgetToEdit, onDismiss: {
                     budgetToEdit = nil
                 }) { budget in
@@ -68,14 +67,5 @@ struct MonthlyView: View {
                 
             }
         }
-    }
-
-    private func onDelete(with indexSet: IndexSet) {
-        indexSet.forEach { index in
-            let budget = result[index]
-            context.delete(budget)
-        }
-        
-        try? context.saveContext()
     }
 }
