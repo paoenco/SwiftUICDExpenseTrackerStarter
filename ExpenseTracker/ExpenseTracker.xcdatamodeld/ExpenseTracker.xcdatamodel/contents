@@ -6,7 +6,7 @@
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
-        <relationship name="monthlyBudget" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MonthlyBudget" inverseName="expenses" inverseEntity="MonthlyBudget"/>
+        <relationship name="monthlyBudget" maxCount="1" deletionRule="Nullify" destinationEntity="MonthlyBudget" inverseName="expenses" inverseEntity="MonthlyBudget"/>
     </entity>
     <entity name="MonthlyBudget" representedClassName="MonthlyBudget" syncable="YES" codeGenerationType="class">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
