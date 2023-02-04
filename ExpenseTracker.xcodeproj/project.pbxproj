@@ -10,6 +10,7 @@
 		52470B8E29888C2C00661C96 /* MonthlyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52470B8D29888C2C00661C96 /* MonthlyView.swift */; };
 		52470B902988966100661C96 /* MonthlyFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52470B8F2988966100661C96 /* MonthlyFormView.swift */; };
 		527842472982F828008B9E84 /* ExpenseLog+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527842462982F828008B9E84 /* ExpenseLog+Extensions.swift */; };
+		527F7B6A298CC4A100A1CB8D /* MonthlyBudget+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527F7B69298CC4A100A1CB8D /* MonthlyBudget+Extension.swift */; };
 		52899746297E0361007A4B56 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52899745297E0361007A4B56 /* CoreDataStack.swift */; };
 		52CA6A07297E012400059753 /* ExpenseTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 52CA6A05297E012400059753 /* ExpenseTracker.xcdatamodeld */; };
 		8BE1F53F244C04E90017E21D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE1F53E244C04E90017E21D /* AppDelegate.swift */; };
@@ -41,6 +42,7 @@
 		52470B8D29888C2C00661C96 /* MonthlyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyView.swift; sourceTree = "<group>"; };
 		52470B8F2988966100661C96 /* MonthlyFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyFormView.swift; sourceTree = "<group>"; };
 		527842462982F828008B9E84 /* ExpenseLog+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExpenseLog+Extensions.swift"; sourceTree = "<group>"; };
+		527F7B69298CC4A100A1CB8D /* MonthlyBudget+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MonthlyBudget+Extension.swift"; sourceTree = "<group>"; };
 		52899745297E0361007A4B56 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		52CA6A06297E012400059753 /* ExpenseTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ExpenseTracker.xcdatamodel; sourceTree = "<group>"; };
 		8BE1F53B244C04E90017E21D /* ExpenseTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExpenseTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +141,7 @@
 				8BE1F559244C060B0017E21D /* Category.swift */,
 				8BE1F55E244C07BC0017E21D /* Sort.swift */,
 				527842462982F828008B9E84 /* ExpenseLog+Extensions.swift */,
+				527F7B69298CC4A100A1CB8D /* MonthlyBudget+Extension.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				8BE1F576244C0AB20017E21D /* PieChartRow.swift in Sources */,
 				8BE1F57D244C0CD90017E21D /* FilterCategoriesView.swift in Sources */,
 				52470B902988966100661C96 /* MonthlyFormView.swift in Sources */,
+				527F7B6A298CC4A100A1CB8D /* MonthlyBudget+Extension.swift in Sources */,
 				8BE1F583244C0DD10017E21D /* LogFormView.swift in Sources */,
 				527842472982F828008B9E84 /* ExpenseLog+Extensions.swift in Sources */,
 				8BE1F55F244C07BC0017E21D /* Sort.swift in Sources */,
