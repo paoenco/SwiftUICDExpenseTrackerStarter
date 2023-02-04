@@ -73,6 +73,7 @@ struct LogFormView: View {
         log.category = category.rawValue
         log.amount = NSDecimalNumber(value: amount)
         log.date = date
+        log.monthlyBudget = budget
         
         do {
             try context.save()

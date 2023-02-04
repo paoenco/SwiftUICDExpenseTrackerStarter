@@ -11,7 +11,7 @@ import SwiftUI
 
 struct MonthlyLogListView: View {
     @Environment(\.managedObjectContext) private var context: NSManagedObjectContext
-    var budget: MonthlyBudget
+    @State var budget: MonthlyBudget
     
     @State private var logToEdit: ExpenseLog?
     
