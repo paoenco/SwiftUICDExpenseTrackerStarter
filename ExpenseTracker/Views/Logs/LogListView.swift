@@ -58,6 +58,7 @@ struct LogListView: View {
             }) { log in
                 LogFormView(logToEdit: logToEdit,
                             context: context,
+                            budget: log.monthlyBudget!,
                             name: log.name ?? "",
                             amount: log.amount?.doubleValue ?? 0,
                             category: Category(rawValue: log.category ?? "") ?? .food,

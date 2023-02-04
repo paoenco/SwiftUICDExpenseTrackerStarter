@@ -20,7 +20,6 @@ struct LogsTabView: View {
     @State private var sortOrder = SortOrder.descending
     
     @State var selectedCategories: Set<Category> = Set()
-    @State var isAddFormPresented: Bool = false
     
     var body: some View {
         NavigationView {
@@ -34,18 +33,7 @@ struct LogsTabView: View {
                             sortDescriptor: ExpenseLogSort(sortType: sortType, sortOrder: sortOrder).sortDescriptor)
             }
             .padding(.bottom, searchBarHeight)
-            .sheet(isPresented: $isAddFormPresented) {
-                LogFormView(context: context)
-            }
-            .navigationBarItems(trailing: Button(action: addTapped) { Text("Add") })
-            .navigationBarTitle("Expense Logs", displayMode: .inline)
+            .navigationBarTitle("All Expenses", displayMode: .inline)
         }
     }
-    
-    func addTapped() {
-        isAddFormPresented = true
-    }
-    
-    
-    
 }

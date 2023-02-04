@@ -38,7 +38,7 @@ struct MonthlyLogsView: View {
         }
         .padding(.bottom, searchBarHeight)
         .sheet(isPresented: $isAddFormPresented) {
-            LogFormView(context: context)
+            LogFormView(context: context, budget: budget)
         }
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
