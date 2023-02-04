@@ -36,11 +36,15 @@ struct MonthlyLogsView: View {
         .sheet(isPresented: $isAddFormPresented) {
             LogFormView(context: context)
         }
-        .navigationBarItems(trailing: Button(action: addTapped) { Text("Add") })
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    isAddFormPresented.toggle()
+                } label: {
+                    Label("Add", systemImage: "plus")
+                }
+            }
+        }
         .navigationBarTitle("Expense Logs", displayMode: .inline)
-    }
-    
-    func addTapped() {
-        isAddFormPresented = true
     }
 }
