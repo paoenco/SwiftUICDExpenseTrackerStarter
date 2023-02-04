@@ -23,7 +23,7 @@ struct LogsTabView: View {
     @State var isAddFormPresented: Bool = false
     
     var body: some View {
-//        NavigationView {
+        NavigationView {
             VStack(spacing: 0) {
                 SearchBar(text: $searchText, keyboardHeight: $searchBarHeight, placeholder: "Search expenses")
                 FilterCategoriesView(selectedCategories: $selectedCategories)
@@ -39,7 +39,7 @@ struct LogsTabView: View {
             }
             .navigationBarItems(trailing: Button(action: addTapped) { Text("Add") })
             .navigationBarTitle("Expense Logs", displayMode: .inline)
-//        }
+        }
     }
     
     func addTapped() {
