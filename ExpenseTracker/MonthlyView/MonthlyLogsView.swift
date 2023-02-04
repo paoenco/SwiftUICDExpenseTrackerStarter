@@ -14,6 +14,8 @@ struct MonthlyLogsView: View {
     @Environment(\.managedObjectContext)
         var context: NSManagedObjectContext
     
+    var budget: MonthlyBudget
+    
     @State private var searchText : String = ""
     @State private var searchBarHeight: CGFloat = 0
     @State private var sortType = SortType.date
@@ -29,8 +31,10 @@ struct MonthlyLogsView: View {
             Divider()
             SelectSortOrderView(sortType: $sortType, sortOrder: $sortOrder)
             Divider()
-            LogListView(predicate: ExpenseLog.predicate(with: Array(selectedCategories), searchText: searchText),
-                        sortDescriptor: ExpenseLogSort(sortType: sortType, sortOrder: sortOrder).sortDescriptor)
+            MonthlyLogListView(budget: budget)
+            Spacer()
+//            LogListView(predicate: ExpenseLog.predicate(with: Array(selectedCategories), searchText: searchText),
+//                        sortDescriptor: ExpenseLogSort(sortType: sortType, sortOrder: sortOrder).sortDescriptor)
         }
         .padding(.bottom, searchBarHeight)
         .sheet(isPresented: $isAddFormPresented) {
@@ -45,6 +49,6 @@ struct MonthlyLogsView: View {
                 }
             }
         }
-        .navigationBarTitle("Expense Logs", displayMode: .inline)
+        .navigationBarTitle("\(budget.wrappedName) Expenses", displayMode: .inline)
     }
 }
