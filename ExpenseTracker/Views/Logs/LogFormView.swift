@@ -13,7 +13,7 @@ struct LogFormView: View {
     
     var logToEdit: ExpenseLog?
     var context: NSManagedObjectContext
-    var budget: MonthlyBudget
+    @ObservedObject var budget: MonthlyBudget
         
     @State var name: String = ""
     @State var amount: Double = 0
